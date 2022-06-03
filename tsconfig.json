@@ -13,5 +13,9 @@
     "resolveJsonModule": true
   },
   "include": ["src", "typings.d.ts"],
-  "exclude": ["node_modules", ".umi"]
+  "exclude": [
+    "node_modules",
+    ".umi",
+    "src/**/__tests__",
+  ]
 }

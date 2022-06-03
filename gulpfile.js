@@ -11,7 +11,11 @@ const paths = {
         dist: 'dist', // umd文件存放的目录名 - 暂时不关心
     },
     styles: 'src/**/*.less', // 样式文件路径 - 暂时不关心
-    scripts: ['src/**/*.{ts,tsx}', '!src/**/demo/*.{ts,tsx}'], // 脚本文件路径
+    scripts: [
+        'src/**/*.{ts,tsx}',
+        '!src/**/demo/*.{ts,tsx}',
+        '!src/**/__tests__/*.{ts,tsx}',
+    ], // 脚本文件路径
 };
 
 /**
