@@ -1,4 +1,4 @@
-# [12.0.0](https://github.com/wuchuhengtools/typewriter-js/compare/v11.0.0...v12.0.0) (2022-06-03)
+# [13.0.0](https://github.com/wuchuhengtools/typewriter-js/compare/v11.0.0...v13.0.0) (2022-06-03)
 
 
 
