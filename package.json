@@ -1,6 +1,6 @@
 {
   "name": "@wuchuhengtools/type-witer",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -56,6 +56,7 @@
     "@umijs/fabric": "^2.10.0",
     "chalk": "^5.0.1",
     "commitizen": "^4.2.4",
+    "conventional-changelog-cli": "^2.2.2",
     "cz-conventional-changelog": "^3.3.0",
     "dumi": "^1.1.42",
     "gh-pages": "^4.0.0",
