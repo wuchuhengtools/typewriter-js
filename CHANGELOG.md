@@ -1,3 +1,7 @@
+## [13.0.1-7](https://github.com/wuchuhengtools/typewriter-js/compare/v13.0.1-6...v13.0.1-7) (2022-06-03)
+
+
+
 ## [13.0.1-6](https://github.com/wuchuhengtools/typewriter-js/compare/v13.0.1-5...v13.0.1-6) (2022-06-03)
 
 
