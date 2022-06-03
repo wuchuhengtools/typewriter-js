@@ -39,8 +39,46 @@ enum TypingActionType {
   TYPING,
   DELETE,
 }
-const sleep = (timeout: number): Promise<void> =>
-  new Promise((resolve) => setTimeout(() => resolve(), timeout));
+
+const printHandler = (
+    content: string,
+    cycleNum:number,
+    speed: number,
+    callBack: (newContent: string) => void
+) => {
+  let currentCycleNum: number = 0;
+  let typingAction: TypingActionType = TypingActionType.TYPING;
+  let currentContent: string = ''
+  let intervalHandler: ReturnType<typeof setInterval>;
+  let timeoutHandler: ReturnType<typeof setTimeout>;
+  const sleep = () => {
+    timeoutHandler = setTimeout(print, 1000)
+  }
+  const handler = () => {
+    if (typingAction === TypingActionType.TYPING) {
+      currentContent = content.substring(0, currentContent.length + 1)
+      if (currentContent.length === content.length) {
+        typingAction = TypingActionType.DELETE
+        clearInterval(intervalHandler)
+        currentCycleNum < cycleNum && sleep()
+      }
+    } else {
+      currentContent = currentContent.substring(0, currentContent.length - 1)
+      if (currentContent.length === 0) {
+        currentCycleNum += 1
+        typingAction = TypingActionType.TYPING
+        clearInterval(intervalHandler)
+        sleep()
+      }
+    }
+    callBack(currentContent)
+  }
+  const print = () => {
+    intervalHandler = setInterval(() => handler(), speed)
+  }
+  print()
+
+}
 
 const Typewriter: React.FC<TypewriterProps> = ({
   content,
@@ -49,56 +87,13 @@ const Typewriter: React.FC<TypewriterProps> = ({
   className,
 }) => {
   const [visibleContent, setVisibleContent] = useState<string>('');
-  const [currentCycleNum, setCurrentCycleNum] = useState<number>(0);
-  const [typingAction, setTypingAction] = useReducer(
-    (_: any, newType: TypingActionType): TypingActionType => {
-      if (newType === TypingActionType.TYPING) {
-        setVisibleContent(() => content.substring(0, visibleContent.length + 1));
-      } else {
-        setVisibleContent(() => visibleContent.substring(0, visibleContent.length - 1));
-      }
-
-      return newType;
-    },
-    TypingActionType.TYPING,
-  );
-  const isPrint = cycleNum >= currentCycleNum || currentCycleNum === -1;
-  const pause = async (): Promise<void> => await sleep(1500);
-  const mounted = useRef(false);
-
-  const handlerPrint = useCallback(async () => {
-    if (content.length === visibleContent.length) {
-      await pause();
-      if (isPrint) setTypingAction(TypingActionType.DELETE);
-    } else if (visibleContent.length === 0) {
-      if (isPrint) {
-        await pause();
-        setTypingAction(TypingActionType.TYPING);
-        setCurrentCycleNum(() => currentCycleNum + 1);
-      }
-    } else {
-      setTypingAction(typingAction);
-    }
-  }, [visibleContent]);
   useEffect(() => {
-    mounted.current = true;
-    if (isPrint && mounted.current ) {
-      const intervalHandler = setInterval(() => handlerPrint(), speed);
-      return () => {
-        clearInterval(intervalHandler);
-        mounted.current = false;
-      }
-    }
-    return () => {
-      mounted.current = false;
-    }
-  }, [visibleContent]);
-  useEffect(() => {
-    mounted.current = true;
-    handlerPrint().then(() => {});
-    return () => {
-      mounted.current = false
-    }
+    printHandler(
+        content,
+        cycleNum,
+        speed,
+        setVisibleContent
+    )
   }, []);
 
   return (
