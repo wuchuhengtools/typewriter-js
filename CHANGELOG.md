@@ -1,3 +1,12 @@
+## [13.0.1-9](https://github.com/wuchuhengtools/typewriter-js/compare/v13.0.1-8...v13.0.1-9) (2022-06-03)
+
+
+### Bug Fixes
+
+* **components:** fix the bug of typing when  printing for the 3rd time. ([57e43c9](https://github.com/wuchuhengtools/typewriter-js/commit/57e43c960c8ad144bebb4e017ae9ec4e31b40f66))
+
+
+
 ## [13.0.1-8](https://github.com/wuchuhengtools/typewriter-js/compare/v13.0.1-7...v13.0.1-8) (2022-06-03)
 
 
