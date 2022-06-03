@@ -10,11 +10,10 @@ A simple yet powerful native javascript plugin for a cool typewriter effect.</p>
 ## Installing
 
 ``` shell
-$ npm install @wuchuhengtools/typewriter
+$ npm i @wuchuhengtools/type-writer
 ```
 
 ## Examples
-
 
 
 ## Contributing

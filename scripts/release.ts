@@ -86,7 +86,7 @@ async function updateVersion(nextVersion: string) {
  */
 async function generateChangelog() {
     timeLog('生成CHANGELOG.md', 'start');
-    await run(' npx conventional-changelog -p angular -i CHANGELOG.md -s -r 0');
+    await run('pnpx conventional-changelog -p angular -i CHANGELOG.md -s -r 0');
     timeLog('生成CHANGELOG.md', 'end');
 }
 
@@ -115,7 +115,7 @@ async function build() {
  */
 async function publish() {
     timeLog('发布组件库', 'start');
-    await run('npm publish');
+    await run('npm publish --access public');
     timeLog('发布组件库', 'end');
 }
 
