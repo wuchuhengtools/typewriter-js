@@ -1,3 +1,12 @@
+## [13.0.1-8](https://github.com/wuchuhengtools/typewriter-js/compare/v13.0.1-7...v13.0.1-8) (2022-06-03)
+
+
+### Bug Fixes
+
+* **style:** fix the styles bug for typewriter. ([2c3a198](https://github.com/wuchuhengtools/typewriter-js/commit/2c3a1982a731f5d0ac71779c3e23baca4602e701))
+
+
+
 ## [13.0.1-7](https://github.com/wuchuhengtools/typewriter-js/compare/v13.0.1-6...v13.0.1-7) (2022-06-03)
 
 
