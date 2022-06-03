@@ -7,7 +7,8 @@
  */
 import React, {useCallback, useEffect, useReducer, useRef, useState} from 'react';
 
-const prefixCls = 'typewriter';
+const prefixCls = 'type-writer';
+
 interface TypewriterProps {
   /**
    * @description 要打印的内容
