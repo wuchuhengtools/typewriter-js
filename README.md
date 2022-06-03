@@ -4,6 +4,8 @@
 <a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://github.com/wuchuhengtools/typewriter-js/actions/workflows/gh-pages.yml/badge.svg" alt="NPM Version" /></a>
 </p>
 
+## [Document](https://wuchuhengtools.github.io/typewriter-js/alert)
+
 ## Description
 A simple yet powerful native javascript plugin for a cool typewriter effect.</p>
 

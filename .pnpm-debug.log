@@ -1,0 +1,14 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ERR_PNPM_LINK_BAD_PARAMS",
+    "err": {
+      "name": "pnpm",
+      "message": "You must provide a parameter",
+      "code": "ERR_PNPM_LINK_BAD_PARAMS",
+      "stack": "pnpm: You must provide a parameter\n    at Object.handler (/Users/wuchuheng/.nvm/versions/node/v16.14.2/lib/node_modules/pnpm/dist/pnpm.cjs:122610:17)\n    at async /Users/wuchuheng/.nvm/versions/node/v16.14.2/lib/node_modules/pnpm/dist/pnpm.cjs:182129:21\n    at async run (/Users/wuchuheng/.nvm/versions/node/v16.14.2/lib/node_modules/pnpm/dist/pnpm.cjs:182103:34)\n    at async runPnpm (/Users/wuchuheng/.nvm/versions/node/v16.14.2/lib/node_modules/pnpm/dist/pnpm.cjs:182322:5)\n    at async /Users/wuchuheng/.nvm/versions/node/v16.14.2/lib/node_modules/pnpm/dist/pnpm.cjs:182314:7"
+    }
+  }
+}

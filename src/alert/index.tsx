@@ -25,17 +25,21 @@ const kinds: KindMap = {
     warning: '#FFA502',
 };
 
-const Alert: React.FC<AlertProps> = ({ children, kind = 'info', ...rest }) => (
-    <div
-        className={prefixCls}
-        style={{
-            background: kinds[kind],
-        }}
-        {...rest}
-    >
-        {children}
-    </div>
-);
+const Alert: React.FC<AlertProps> = ({ children, kind = 'info', ...rest }) => {
+    const [state, setState] = React.useState<string>('');
+
+    return (
+        <div
+            className={prefixCls}
+            style={{
+                background: kinds[kind],
+            }}
+            {...rest}
+        >
+            {children}
+        </div>
+    );
+}
 
 Alert.propTypes = {
     kind: t.oneOf(['info', 'positive', 'negative', 'warning']),

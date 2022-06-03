@@ -5,9 +5,9 @@
  * @Author      wuchuheng<root@wuchuheng.com>
  * @Time        2022/6/2 06:58
  */
-import React, { useCallback, useEffect, useReducer, useState } from 'react';
+import React, {useCallback, useEffect, useReducer, useRef, useState} from 'react';
 
-const prefixCls = 'type-writer';
+const prefixCls = 'typewriter';
 interface TypewriterProps {
   /**
    * @description 要打印的内容
@@ -63,6 +63,8 @@ const Typewriter: React.FC<TypewriterProps> = ({
   );
   const isPrint = cycleNum >= currentCycleNum || currentCycleNum === -1;
   const pause = async (): Promise<void> => await sleep(1500);
+  const mounted = useRef(false);
+
   const handlerPrint = useCallback(async () => {
     if (content.length === visibleContent.length) {
       await pause();
@@ -78,13 +80,24 @@ const Typewriter: React.FC<TypewriterProps> = ({
     }
   }, [visibleContent]);
   useEffect(() => {
-    if (isPrint) {
+    mounted.current = true;
+    if (isPrint && mounted.current ) {
       const intervalHandler = setInterval(() => handlerPrint(), speed);
-      return () => clearInterval(intervalHandler);
+      return () => {
+        clearInterval(intervalHandler);
+        mounted.current = false;
+      }
+    }
+    return () => {
+      mounted.current = false;
     }
   }, [visibleContent]);
   useEffect(() => {
+    mounted.current = true;
     handlerPrint().then(() => {});
+    return () => {
+      mounted.current = false
+    }
   }, []);
 
   return (

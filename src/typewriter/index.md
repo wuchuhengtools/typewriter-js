@@ -8,12 +8,9 @@ title: 反馈
 order: 1
 ---
 
-# TypeWriter
+## TypeWriter 打字效果
 
 打字效果
-
-
-## 代码演示
 
 ### 基本用法
 
