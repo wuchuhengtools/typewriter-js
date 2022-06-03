@@ -1,6 +1,6 @@
 {
   "name": "@wuchuhengtools/type-writer",
-  "version": "8.0.0",
+  "version": "9.0.0",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -43,6 +43,7 @@
     "type": "git",
     "url": "https://github.com/wuchuhengtools/typewriter-js"
   },
+  "homepage": "https://wuchuhengtools.github.io/typewriter-js/",
   "license": "ISC",
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.18.2",
@@ -57,10 +58,14 @@
     "@types/react-dom": "^18.0.5",
     "@types/semver": "^7.3.9",
     "@types/testing-library__react": "^10.2.0",
+    "@umijs/babel-preset-umi": "^3.5.25",
+    "@umijs/core": "^3.5.25",
     "@umijs/fabric": "^2.10.0",
+    "@umijs/utils": "^3.5.25",
     "chalk": "^5.0.1",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.2.2",
+    "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
     "dumi": "^1.1.42",
     "gh-pages": "^4.0.0",
@@ -76,6 +81,7 @@
     "jest-environment-jsdom": "^28.1.0",
     "lint-staged": "^13.0.0",
     "node-fetch": "^3.2.5",
+    "node-libs-browser": "^2.2.1",
     "np": "^7.6.1",
     "plop": "^3.1.0",
     "prettier": "^2.6.2",
