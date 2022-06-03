@@ -1,6 +1,6 @@
 {
   "name": "@wuchuhengtools/type-writer",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index.d.ts",
@@ -46,6 +46,7 @@
   "homepage": "https://wuchuhengtools.github.io/typewriter-js/",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.18.2",
     "@babel/plugin-transform-runtime": "^7.18.2",
     "@babel/runtime": "^7.18.3",
     "@commitlint/cli": "^17.0.2",
